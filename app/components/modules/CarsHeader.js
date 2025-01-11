@@ -28,7 +28,7 @@ function CarsHeader({ min, max, setMin, setMax }) {
             <input placeholder="start price" onChange={(e) => setMin(e.target.value)} value={min} className="p-1 rounded outline-none border" type='number' required/>
             <input placeholder="end price" onChange={(e) => setMax(e.target.value)} value={max} className="p-1 rounded outline-none border" type='number' required/>
           </div>
-          <Link href={`/cars/filter/?category=${searchParams.get('category')}&min=${min}&max=${max}`} className=" bg-[#f0f0f0] w-[100px] grid place-items-center rounded-md">Search</Link>
+          <Link onClick={()=>{if(max === 0 || max === '0'){alert('please enter min/max price correctly');return;}}} href={`/cars/filter/?category=${searchParams.get('category')}&min=${min}&max=${max}`} className=" bg-[#f0f0f0] w-[100px] grid place-items-center rounded-md">Search</Link>
         </div>
         {/* category-filter section */}
         <div className="flex justify-between gap-2 p-1 mx-2 rounded-md bg-gray-50">
